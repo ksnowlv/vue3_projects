@@ -45,8 +45,6 @@ const message = computed({
     set: (value) => store.commit('changeMessage', value)
 })
 
- 
 const BChangeMessage = () => store.dispatch('changeMessageAsync', message.value)
-
 
 </script>
