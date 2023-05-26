@@ -8,9 +8,9 @@
 
 <script  setup>
 
-import { defineAsyncComponent, ref } from "vue"
+import { defineAsyncComponent, shallowRef } from "vue"
 
-const curComponent = ref(null)
+const curComponent = shallowRef(null)
 
 async function handleButtonEvent() {
     if (curComponent.value === null) {

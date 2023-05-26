@@ -1,20 +1,22 @@
 <template>
-    <div>
-      <h3>第一种切换组件方法</h3>
-      <button @click="toggleComponent">切换组件</button>
-      <keep-alive> 
-        <component :is="flag? ComponentA: ComponentB"></component>
-      </keep-alive>
-      
-      <h3>另一种切换组件方法</h3>
-      <button @click="handleComponentChange">切换组件</button>
-      <keep-alive>
-        <component :is="currentComponent"></component>
-      </keep-alive>
-      <AsyncComponent />
-      
-    </div>
-  </template>
+  <div>
+    <h3>第一种切换组件方法</h3>
+    <button @click="toggleComponent">切换组件</button>
+    <keep-alive>
+      <component :is="flag ? ComponentA : ComponentB"></component>
+    </keep-alive>
+
+    <h3>另一种切换组件方法</h3>
+    <button @click="handleComponentChange">切换组件</button>
+    <keep-alive>
+      <component :is="currentComponent"></component>
+    </keep-alive>
+
+    <h3>---切换组件方法</h3>
+    <AsyncComponent />
+
+  </div>
+</template>
   
 <!-- 使用setup语法糖，这时候的is如果使用字符串会加载不出来，得使用组件实例 
 <script>
@@ -48,20 +50,19 @@ import AsyncComponent from './AsyncComponent.vue'
 const flag = ref(true)
 
 const toggleComponent = () => {
-    flag.value = !flag.value
+  flag.value = !flag.value
 }
 
 //第二种切换组件方法
-let currentComponent = shallowRef(ComponentA)  
- 
-const handleComponentChange = () => {
-   if(currentComponent.value == ComponentA) {
-        currentComponent.value = ComponentB
-   }else {
-        currentComponent.value = ComponentA
-    }
-}
+let currentComponent = shallowRef(ComponentA)
 
+const handleComponentChange = () => {
+  if (currentComponent.value == ComponentA) {
+    currentComponent.value = ComponentB
+  } else {
+    currentComponent.value = ComponentA
+  }
+}
 
 </script>
 

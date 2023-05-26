@@ -9,6 +9,6 @@
 import { ref } from "vue";
 
 
-// const message = ref('我是组件A')
+const message = ref('我是组件A')
 
 </script>
