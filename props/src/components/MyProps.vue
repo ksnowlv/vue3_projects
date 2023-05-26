@@ -1,7 +1,7 @@
 <template>
     <div>
         <p>parent component! </p>
-        <child-props :myTitle="title" :myAge="age" :user="user" @increment_event="handleCounterIncreased"/>
+        <child-props :myTitle="title" :myAge="age" :user="user" @increment_event="handleCounterIncreased" />
         <!-- <child-props  :myAge="-1"/> -->
         <br>
         <p>parent component </p>
@@ -26,7 +26,7 @@ const user = reactive({
 const count = ref(0)
 
 console.log("title:", title)
-        console.log("age:", age)
+console.log("age:", age)
 
 const handleCounterIncreased = (counterValue) => {
     // console.log("handleCounterIncreased:", count)
